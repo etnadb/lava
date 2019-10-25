@@ -1,20 +1,20 @@
 open TokenRegex;
 
+type query =
+| Get(queryMap)
+| Set(queryMap)
+| Exist(queryMap)
+| Delete(queryMap)
+| Unknown
+
+and queryMap = {
+  command: string,
+  type':   string,
+  key:     string,
+  value:   string
+};
+
 module Tokenizer = {
-
-  type query =
-  | Get(queryMap)
-  | Set(queryMap)
-  | Exist(queryMap)
-  | Delete(queryMap)
-  | Unknown
-
-  and queryMap = {
-    command: string,
-    type':   string,
-    key:     string,
-    value:   string
-  };
 
   let tokenize = (input) =>
     Js.String.split(" ", input);
@@ -28,13 +28,13 @@ module Tokenizer = {
       | _ => Unknown
     };
 
-  let validateQuery = (tokens: query) =>
+  /* let validateQuery = (tokens: query) =>
     switch tokens {
       | Get(query)   => Validation.Tokens.keyFromQuery(query)
       | Set(query)   => "validateSet"
       | Exist(query) => "validateExist"
       | Delete(query) => "validateDelete"
       | _             => ""
-    };
+    }; */
 
 };
