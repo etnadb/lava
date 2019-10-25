@@ -13,6 +13,9 @@
   "bs-dependencies": [
 
   ],
+  "bs-dev-dependencies": [
+    "bs-jest"
+  ],
   "warnings": {
     "error" : "+101"
   },

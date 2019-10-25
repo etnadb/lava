@@ -1,11 +1,11 @@
 open TokenRegex;
 
 type query =
-| Get(queryMap)
-| Set(queryMap)
-| Exist(queryMap)
-| Delete(queryMap)
-| Unknown
+  | Get(queryMap)
+  | Set(queryMap)
+  | Exist(queryMap)
+  | Delete(queryMap)
+  | Unknown
 
 and queryMap = {
   command: string,
@@ -13,6 +13,14 @@ and queryMap = {
   key:     string,
   value:   string
 };
+
+type validTypes =
+  | String
+  | Integer
+  | Float
+  | Boolean
+  | Null
+  | Json;
 
 module Tokenizer = {
 
