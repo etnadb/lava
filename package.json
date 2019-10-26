@@ -13,6 +13,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.9",
     "bs-jest": "^0.3.2",
     "bs-platform": "^5.0.6"
   }
